@@ -1,3 +1,6 @@
 /** CONSTRUCTION 
 	home-theme-construction.html 
  ********************************************* **/
+.btn-red:hover{
+	background-color: blue !important;
+}
