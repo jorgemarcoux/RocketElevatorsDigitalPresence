@@ -30,59 +30,14 @@
 		<link href="assets/css/color_scheme/yellow.css" rel="stylesheet" type="text/css" id="color_scheme" />
 	</head>
 
-	<!--
-		AVAILABLE BODY CLASSES:
-		
-		smoothscroll 			= create a browser smooth scroll
-		enable-animation		= enable WOW animations
-
-		bg-grey					= grey background
-		grain-grey				= grey grain background
-		grain-blue				= blue grain background
-		grain-green				= green grain background
-		grain-blue				= blue grain background
-		grain-orange			= orange grain background
-		grain-yellow			= yellow grain background
-		
-		boxed 					= boxed layout
-		pattern1 ... patern11	= pattern background
-		menu-vertical-hide		= hidden, open on click
-		
-		BACKGROUND IMAGE [together with .boxed class]
-		data-background="assets/images/_smarty/boxed_background/1.jpg"
-	-->
+	
 	<body class="smoothscroll enable-animation">
 
 
 		<!-- wrapper -->
 		<div id="wrapper">
 
-			<!-- 
-				AVAILABLE HEADER CLASSES
-
-				Default nav height: 96px
-				.header-md 		= 70px nav height
-				.header-sm 		= 60px nav height
-
-				.b-0 		= remove bottom border (only with transparent use)
-				.transparent	= transparent header
-				.translucent	= translucent header
-				.sticky			= sticky header
-				.static			= static header
-				.dark			= dark header
-				.bottom			= header on bottom
-				
-				shadow-before-1 = shadow 1 header top
-				shadow-after-1 	= shadow 1 header bottom
-				shadow-before-2 = shadow 2 header top
-				shadow-after-2 	= shadow 2 header bottom
-				shadow-before-3 = shadow 3 header top
-				shadow-after-3 	= shadow 3 header bottom
-
-				.clearfix		= required for mobile menu, do not remove!
-
-				Example Usage:  class="clearfix sticky header-sm transparent b-0"
-			-->
+			
 			<div id="header" class="navbar-toggleable-md sticky clearfix">
 
 				<!-- SEARCH HEADER -->
@@ -125,79 +80,46 @@
 							<img src="demo_files/images/Logo-R2.png" alt="Rocket Elevators logo" />
 						</a>
 
-						<!-- 
-							Top Nav 
-							
-							AVAILABLE CLASSES:
-							submenu-dark = dark sub menu
-						-->
+						
 						<div class="navbar-collapse collapse float-right nav-main-collapse">
 							<nav class="nav-main">
 
-								<!--
-									NOTE
-									
-									For a regular link, remove "dropdown" class from LI tag and "dropdown-toggle" class from the href.
-									Direct Link Example: 
-
-									<li>
-										<a href="#">HOME</a>
-									</li>
-								-->
+								
 								<ul id="topMain" class="nav nav-pills nav-main">
 									<!-- HOME -->
 									<li class="dropdown active" class="nav-animate-fadeIn nav-hover-animate hover-animate-bounceIn">
-										<a class="dropdown-toggle noicon" href="#">
+										<a class="dropdown-toggle noicon" href="#slider-home">
 											HOME
 										</a>
 										
                                     <!-- SERVICES -->
 									<li class="nav-animate-fadeIn nav-hover-animate hover-animate-bounceIn">
-										<a class="dropdown-toggle noicon" href="#">
+										<a class="dropdown-toggle noicon" href="#services">
 											SERVICES
 										</a>
 
 										<!-- PORTFOLIO -->
 									<li class="nav-animate-fadeIn nav-hover-animate hover-animate-bounceIn">
-										<a class="dropdown-toggle noicon" href="#">
+										<a class="dropdown-toggle noicon" href="#portfolio">
 											PORTFOLIO
 										</a>
 									
 									<!-- NEWS -->
 									<li class="nav-animate-fadeIn nav-hover-animate hover-animate-bounceIn">
-										<a class="dropdown-toggle noicon" href="#">
+										<a class="dropdown-toggle noicon" href="#news">
 											NEWS
 										</a>
 
 									</li>
 									<!-- CLIENTS -->
 									<li class="nav-animate-fadeIn nav-hover-animate hover-animate-bounceIn">
-										<a class="dropdown-toggle noicon" href="#">
+										<a class="dropdown-toggle noicon" href="#clients">
 											CLIENTS
 										</a>
 										
-										
-                                    
-
-
-									<!-- 
-										MENU ANIMATIONS
-											.nav-animate-fadeIn
-											.nav-animate-fadeInUp
-											.nav-animate-bounceIn
-											.nav-animate-bounceInUp
-											.nav-animate-flipInX
-											.nav-animate-flipInY
-											.nav-animate-zoomIn
-											.nav-animate-slideInUp
-
-											.nav-hover-animate 		= animate text on hover
-
-											.hover-animate-bounceIn = bounceIn effect on mouse over of main menu
-									-->
 									<!-- CONTACT -->
 									<li class="nav-animate-fadeIn nav-hover-animate hover-animate-bounceIn">
-										<a class="dropdown-toggle noicon" href="#">
+										<a class="dropdown-toggle noicon" href="#contact-form">
 											<b>CONTACT</b>
 										</a>
 
@@ -217,35 +139,8 @@
 
 
 			<!-- REVOLUTION SLIDER -->
-			<div class="slider fullwidthbanner-container roundedcorners">
-				<!--
-					Navigation Styles:
-					
-						data-navigationStyle="" theme default navigation
-						
-						data-navigationStyle="preview1"
-						data-navigationStyle="preview2"
-						data-navigationStyle="preview3"
-						data-navigationStyle="preview4"
-						
-					Bottom Shadows
-						data-shadow="1"
-						data-shadow="2"
-						data-shadow="3"
-						
-					Slider Height (do not use on fullscreen mode)
-						data-height="300"
-						data-height="350"
-						data-height="400"
-						data-height="450"
-						data-height="500"
-						data-height="550"
-						data-height="600"
-						data-height="650"
-						data-height="700"
-						data-height="750"
-						data-height="800"
-				-->
+			<div class="slider fullwidthbanner-container roundedcorners" id="slider-home">
+				
 				<div class="fullwidthbanner" data-height="600" data-shadow="0" data-navigationStyle="preview2">
 					<ul class="hide">
 					
@@ -468,7 +363,7 @@
 
 			
 			<!-- Ribbon Awards & Services -->
-			<section>
+			<section id="services">
 				<div class="container">
 					<div class="row">
 						<div class="col-sm-4">
@@ -526,7 +421,7 @@
 
 
 			<!-- PORTFOLIO -->
-			<section>
+			<section id="portfolio">
 				<div class="container">
 
 					<div class="heading-title heading-dotted text-center">
@@ -1021,12 +916,8 @@ At Rocket Elevetors we are very proud to be able to help our hundreds of interna
 			</section>
 			<!-- /Testimonials -->
 
-
-
-
-
 			<!-- News & Press Releases -->
-			<section>
+			<section id="news">
 				<div class="container">
 
 					<div class="heading-title heading-dotted text-center">
@@ -1054,169 +945,92 @@ At Rocket Elevetors we are very proud to be able to help our hundreds of interna
 					-->
 					<div class="owl-carousel owl-padding-10 buttons-autohide controlls-over" data-plugin-options='{"singleItem": false, "items":"4", "autoPlay": 4000, "navigation": true, "pagination": false}'>
 						<div class="img-hover">
-							<a href="blog-single-default.html">
-								<img class="img-fluid" src="demo_files/images/451x300/24-min.jpg" alt="">
+							<a href="news-elevators-1.html" target="_blank">
+								<img class="img-fluid" src="demo_files/images/elevator-pandemic.jpg" alt="Elevatros during pandemic">
 							</a>
 
-							<h4 class="text-left mt-20"><a href="blog-single-default.html">Lorem Ipsum Dolor</a></h4>
-							<p class="text-left">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, asperiores quod est tenetur in.</p>
+							<h4 class="text-left mt-20"><a href="news-elevators-1.html" target="_blank">Elevators During The Pandemidc</a></h4>
+							<p class="text-left">Should you avoid hotel elevators during the COVID-19 pandemic?</p>
 							<ul class="text-left fs-12 list-inline list-separator">
 								<li>
 									<i class="fa fa-calendar"></i> 
-									29th Jan 2017
-								</li>
-								<li>
-									<a href="blog-single-default.html#comments">
-										<i class="fa fa-comments"></i> 
-										3
-									</a>
+									10th Aug 2020
 								</li>
 							</ul>
 						</div>
 						<div class="img-hover">
-							<a href="blog-single-default.html">
-								<img class="img-fluid" src="demo_files/images/451x300/17-min.jpg" alt="">
+							<a href="news-elevators-2.html" target="_blank">
+								<img class="img-fluid" src="demo_files/images/elevatos-news2.jpeg" alt="Elevator policy in Toronto">
 							</a>
 
-							<h4 class="text-left mt-20"><a href="blog-single-default.html">Lorem Ipsum Dolor</a></h4>
-							<p class="text-left">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, asperiores quod est tenetur in.</p>
+							<h4 class="text-left mt-20"><a href="news-elevators-2.html" target="_blank">New Elevator Policy in Toronto School</a></h4>
+							<p class="text-left">Parents in Toronto are expressing concerns about new policies to ensure physical distancing in the elevators.</p>
 							<ul class="text-left fs-12 list-inline list-separator">
 								<li>
 									<i class="fa fa-calendar"></i> 
-									29th Jan 2017
-								</li>
-								<li>
-									<a href="blog-single-default.html#comments">
-										<i class="fa fa-comments"></i> 
-										3
-									</a>
+									25th Aug 2020
 								</li>
 							</ul>
 						</div>
 						<div class="img-hover">
-							<a href="blog-single-default.html">
-								<img class="img-fluid" src="demo_files/images/451x300/30-min.jpg" alt="">
+							<a href="news-elevators-3.html" target="_blank">
+								<img class="img-fluid" src="demo_files/images/news-3-cover.jpg" alt="Mariage in elevator">
 							</a>
 
-							<h4 class="text-left mt-20"><a href="blog-single-default.html">Lorem Ipsum Dolor</a></h4>
+							<h4 class="text-left mt-20"><a href="news-elevators-3.html" target="_blank">Mariage Proposal In One Of Our Elevators</a></h4>
 							<p class="text-left">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, asperiores quod est tenetur in.</p>
 							<ul class="text-left fs-12 list-inline list-separator">
 								<li>
 									<i class="fa fa-calendar"></i> 
 									29th Jan 2017
-								</li>
-								<li>
-									<a href="blog-single-default.html#comments">
-										<i class="fa fa-comments"></i> 
-										3
-									</a>
 								</li>
 							</ul>
 						</div>
 						<div class="img-hover">
-							<a href="blog-single-default.html">
-								<img class="img-fluid" src="demo_files/images/451x300/26-min.jpg" alt="">
+							<a href="news-elevators-4.html" target="_blank">
+								<img class="img-fluid" src="demo_files/images/news4-cover.jpg" alt="Baby is born in elevator">
 							</a>
-
-							<h4 class="text-left mt-20"><a href="blog-single-default.html">Lorem Ipsum Dolor</a></h4>
+							<h4 class="text-left mt-20"><a href="news-elevators-4.html">Baby Is Born In Elevator In Japan</a></h4>
 							<p class="text-left">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, asperiores quod est tenetur in.</p>
 							<ul class="text-left fs-12 list-inline list-separator">
 								<li>
 									<i class="fa fa-calendar"></i> 
 									29th Jan 2017
-								</li>
-								<li>
-									<a href="blog-single-default.html#comments">
-										<i class="fa fa-comments"></i> 
-										3
-									</a>
 								</li>
 							</ul>
 						</div>
 						<div class="img-hover">
-							<a href="blog-single-default.html">
-								<img class="img-fluid" src="demo_files/images/451x300/18-min.jpg" alt="">
+							<a href="news-elevators-5.html" target="_blank">
+								<img class="img-fluid" src="demo_files/images/news5-cover.jpeg" alt="Mitsubishi Eletric elevators">
 							</a>
-							<h4 class="text-left mt-20"><a href="blog-single-default.html">Lorem Ipsum Dolor</a></h4>
+							<h4 class="text-left mt-20"><a href="news-elevators-5.html" target="_blank">Mitsubishi Electric to Supply Elevators for New National Assembly Building in Laos</a></h4>
 							<p class="text-left">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, asperiores quod est tenetur in.</p>
 							<ul class="text-left fs-12 list-inline list-separator">
 								<li>
 									<i class="fa fa-calendar"></i> 
 									29th Jan 2017
-								</li>
-								<li>
-									<a href="blog-single-default.html#comments">
-										<i class="fa fa-comments"></i> 
-										3
-									</a>
 								</li>
 							</ul>
 						</div>
 						<div class="img-hover">
-							<a href="blog-single-default.html">
-								<img class="img-fluid" src="demo_files/images/451x300/34-min.jpg" alt="">
+							<a href="news-elevators-6.html" target="_blank">
+								<img class="img-fluid" src="demo_files/images/news6-cover.jpg" alt="Electric elevators">
 							</a>
-							<h4 class="text-left mt-20"><a href="blog-single-default.html">Lorem Ipsum Dolor</a></h4>
+							<h4 class="text-left mt-20"><a href="news-elevators-6.html" target="_blank">Rocket Elevators new electric model</a></h4>
 							<p class="text-left">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, asperiores quod est tenetur in.</p>
 							<ul class="text-left fs-12 list-inline list-separator">
 								<li>
 									<i class="fa fa-calendar"></i> 
 									29th Jan 2017
 								</li>
-								<li>
-									<a href="blog-single-default.html#comments">
-										<i class="fa fa-comments"></i> 
-										3
-									</a>
-								</li>
 							</ul>
 						</div>
-						<div class="img-hover">
-							<a href="blog-single-default.html">
-								<img class="img-fluid" src="demo_files/images/451x300/37-min.jpg" alt="">
-							</a>
-							<h4 class="text-left mt-20"><a href="blog-single-default.html">Lorem Ipsum Dolor</a></h4>
-							<p class="text-left">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, asperiores quod est tenetur in.</p>
-							<ul class="text-left fs-12 list-inline list-separator">
-								<li>
-									<i class="fa fa-calendar"></i> 
-									29th Jan 2017
-								</li>
-								<li>
-									<a href="blog-single-default.html#comments">
-										<i class="fa fa-comments"></i> 
-										3
-									</a>
-								</li>
-							</ul>
-						</div>
-						<div class="img-hover">
-							<a href="blog-single-default.html">
-								<img class="img-fluid" src="demo_files/images/451x300/23-min.jpg" alt="">
-							</a>
-							<h4 class="text-left mt-20"><a href="blog-single-default.html">Lorem Ipsum Dolor</a></h4>
-							<p class="text-left">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, asperiores quod est tenetur in.</p>
-							<ul class="text-left fs-12 list-inline list-separator">
-								<li>
-									<i class="fa fa-calendar"></i> 
-									29th Jan 2017
-								</li>
-								<li>
-									<a href="blog-single-default.html#comments">
-										<i class="fa fa-comments"></i> 
-										3
-									</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-
 				</div>
 			</section>
 			<!-- /News & Press Releases -->
              
 			<!-- Our Customers -->
-			<section style="background-image: url('demo_files/images/blue.jpg');" class="alternate">
+			<section style="background-image: url('demo_files/images/blue.jpg');" class="alternate" id="clients">
 				<div class="container">
 
 					<div class="heading-title heading-dotted text-center">
@@ -1272,24 +1086,24 @@ At Rocket Elevetors we are very proud to be able to help our hundreds of interna
 				</div>
 			</section>
 			<!-- /Our Customers -->
-             <br />
-             <br />
+            
 
-<!----------EMPIEZA PARTE DESMADROSA------------------------------------------->
 
-             <!-- Contact Form -->
-
-             <div class="container">
+    <section id="contact-form">
+       <div class="container">
+           <div class="container">
              	<div class="heading-title heading-dotted text-center">
 				   <h2>Contact Rocket Elevators</h2>
 				</div>
 			</div>
+					<div class="row">
 
-			<div class="container">
-				<div class="col-sm-4">
-             	<div class="row">
-             			<img src="demo_files/images/Image-logo.jpg">
+						<!-- col #1 -->
+						<div class="col-md-4">
+                           <div class="container">
+                           	<img src="demo_files/images/Image-logo.jpg">
              			<div>
+             				<br />
              				<i class="fa fa-map-marker"></i><p style="display:inline;"> 725 Boulevard Lebourgneuf, Québec, QC G2J 0C4</p>
              			</div>
 
@@ -1299,119 +1113,82 @@ At Rocket Elevetors we are very proud to be able to help our hundreds of interna
              			<div>
              				<i class="fa fa-phone-square"></i><p style="display:inline;"> (581) 701-0303</p>
              			</div>
-             		</div>
+             			<br />
+             			 <img src="demo_files/images/Elevator-form.png" alt="">
+						   </div>
+							
+						</div>
+						<!-- /col #1 -->
 
-                  <form>
-                  	<div class="col-sm-8">
-                     <div class="form-row">
-                     	<div class="form-group col-sm-6">
-                     	  <label for="name">Full name</label>
-   				          <input required type="text" class="form-control" id="name" placeholder="Enter your full name">
-   				        </div>
+			<!-- col #2 - Contact Form -->
+				<div class="col-md-8">
+				 <form>
+            	  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="name">Full name</label>
+   				      <input required type="text" class="form-control" id="name" placeholder="Enter your full name">
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="business">Business name</label>
+   				      <input required type="text" class="form-control" id="business" placeholder="Enter your business name">
+                    </div>
+                  </div>
 
-   				         <div class="form-group col-sm-6">
-   				           <label for="business">Business name</label>
-   				           <input required type="text" class="form-control" id="business" placeholder="Enter your business name">
-   				         </div>
-                     </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="email">Email address</label>
+                      <input required type="email" class="form-control" id="email" placeholder="Enter email">
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="tel">Phone number</label>
+                      <input type="tel" class="form-control" id="your-tel" placeholder="Enter your phone number">
+                    </div>
+                  </div>
 
-                     <div class="form-row">
-                     	<div class="form-group col-sm-6">
-                          <label for="email">Email address</label>
-                          <input required type="email" class="form-control" id="email" placeholder="Enter email">
-                        </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="project">Project name</label>
+                      <input type="text" class="form-control" id="your-project" placeholder="Enter your project name">
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="description">Project description</label>
+                      <textarea required maxlength="1000" rows="3" class="form-control" name="description" id="project-desc" placeholder="A brief description of your project"></textarea>
+                    </div>
+                  </div>
 
-                       <div class="form-group col-sm-6">
-                        <label for="tel">Phone number</label>
-                        <input type="tel" class="form-control" id="your-tel" placeholder="Enter your phone number">
-                       </div>
-                     </div>
-
-                     <div class="form-row">
-                     	<div class="form-group col-sm-6">
-                          <label for="project">Project name</label>
-                          <input type="text" class="form-control" id="your-project" placeholder="Enter your project name">
-                        </div>
-
-                       <div class="form-group col-sm-6">
-                        <label for="description">Project description</label>
-                        <textarea required maxlength="1000" rows="2" class="form-control" name="description" id="project-desc" placeholder="A brief description of your project"></textarea>
-                       </div>  
-                     </div>
-
-                    <div class="form-row">
-                     <div class="form-group col-sm-6">
+                    <div class="form-group">
                       <label for="project">Department</label>
                       <input type="text" class="form-control" id="department" placeholder="Your department name">
-                     </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="description">Message</label>
+                    <textarea required maxlength="10000" rows="4" class="form-control" name="message" id="your-message" placeholder="Your message"></textarea>
                     </div>
 
-                   <div class="form-row">
-                    <label for="description">Message</label>
-                    <textarea required maxlength="10000" rows="4" class="form-control" name="message" id="your-message" placeholder="Your message"></textarea>
-                   </div>
-                  <br />
+                   <br />
                   <div class="custom-file">
                    <input type="file" class="custom-file-input" id="validatedCustomFile" required>
                    <label class="custom-file-label" for="validatedCustomFile">Choose file (zip/pdf/jpg/png)</label>
                    <div class="invalid-feedback">Invalid file type</div>
                  </div>
 
-                <br />
-                <div class="form-check">
-                 <input type="checkbox" class="form-check-input" id="Check1">
-                 <label class="form-check-label" for="Check1">Check me out</label>
-                </div>
-               <br />
-               <button type="submit" class="btn btn-red">Submit</button>
-          </form>
-         </div>
-         </div>
+                  <br />
+                  <div class="form-check">
+                   <input type="checkbox" class="form-check-input" id="Check1">
+                   <label class="form-check-label" for="Check1">Check me out</label>
+                  </div>
+                 <br />
+                 <button type="submit" class="btn btn-red">Submit</button>
 
-<!------------------------TEST!!!--------------->
+            	</form>
 
-         <div class="container">
-             	<div class="heading-title heading-dotted text-center">
-				   <h2>Contact Rocket Elevators</h2>
+						</div>
+			<!-- /col #2 - Contact Form-->
+
+					</div>
 				</div>
-			</div>
+    </section>
 
-			<div class="container">
-				<div class="col-sm-4">
-             	<div class="row">
-             			<img src="demo_files/images/Image-logo.jpg">
-             			<div>
-             				<i class="fa fa-map-marker"></i><p style="display:inline;"> 725 Boulevard Lebourgneuf, Québec, QC G2J 0C4</p>
-             			</div>
-
-             			
-                       <!--termina lado info rocket-->
-                 <div class="col-sm-8">
-             		<form>
-                     <div class="form-row">
-                     	<div class="form-group col-sm-6">
-                     	  <label for="name">Full name</label>
-   				          <input required type="text" class="form-control" id="name" placeholder="Enter your full name">
-   				        </div>
-
-   				         <div class="form-group col-sm-6">
-   				           <label for="business">Business name</label>
-   				           <input required type="text" class="form-control" id="business" placeholder="Enter your business name">
-   				         </div>
-                     </div>
-                    </form>
-                </div>
-            </div>
-
-
-<!------/TEST!!--------------------------------->
-                
-        </div>
-        </div>
-        </div>
-
-
-<!----------/TERMINA PARTE DESMADROSA------------------------------------------->
 
 			<!-- FOOTER -->
 			<footer id="footer">
