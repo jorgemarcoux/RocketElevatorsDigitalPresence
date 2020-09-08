@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<title>Residential Buildings</title>
+		<title>Get a Quote</title>
 		<meta name="description" content="" />
 		<meta name="Author" content="Dorin Grigoras [www.stepofweb.com]" />
 
@@ -80,9 +80,21 @@
 										
                                     <!-- SERVICES -->
 									<li class="nav-animate-fadeIn nav-hover-animate hover-animate-bounceIn">
-										<a class="dropdown-toggle noicon" href="RE-index.html#services">
+										<a class="dropdown-toggle noicon" href="#services">
 											SERVICES
 										</a>
+									       <ul class="dropdown-menu">
+											 <li class="dropdown">
+											   <a class="dropdown" href="residential-buildings.html" target="_blank">
+													RESIDENTIAL SERVICES
+											   </a>
+											 </li>
+											 <li class="dropdown">
+											   <a class="dropdown" href="corporate-buildings.html" target="_blank">
+													CORPORATE SERVICES
+												</a>
+											 </li>
+									       </ul>
 
 										<!-- PORTFOLIO -->
 									<li class="nav-animate-fadeIn nav-hover-animate hover-animate-bounceIn">
@@ -122,10 +134,52 @@
 
 			</div>
 			</div>
-
-
+           
+        <!--GET A QUOTE FORM-->
+        <div class="container">
+           	<div class="container">
+           		<br />
+           		<br />
+           	  <h4>Are you interested in our services?</h4> 
+           		<p>Please fill out the form so we can know more about your project and get a quote instantly.</p>
+            </div>
+            <br />
+            <br />
            
 
+				<form>
+            	  <div class="form-row">
+                    <div class="form-group col-5">
+                       <label for="type">Building type</label>
+                    	<select class="custom-select" id="type-building">
+                          <option selected>Select your type of building</option>
+                           <option value="res">Residential</option>
+                           <option value="com">Commercial</option>
+                           <option value="cor">Corporate</option>
+                           <option value="hyb">Hybrid</option>
+                         </select>
+                   </div>
+               </div>
+                   <br />
+                    <!-- If building type == residential--> 
+                    <div class="form-group col-6" id="res-ques">
+                      <label for="apartements">Number of apartments in the building</label>
+                      <input type="number" class="form-control" id="num-apart">
+                      <label for="apartements">Number of floors in the building</label>
+                      <input type="number" class="form-control" id="num-floors">
+                      <label for="apartements">Number of basements in the building</label>
+                      <input type="number" class="form-control" id="num-bas">
+                      <input type="text" name="test" placeholder="test" id="test">
+                    </div>
+                    
+
+               
+
+                </form>
+              
+              
+           
+            
 
 
 
@@ -133,10 +187,17 @@
 
 
 
+        </div><!--div 1st container-->
+
+          
+
+     
 
 
 
-		<!-- FOOTER -->
+
+
+           <!-- FOOTER -->
 			<footer id="footer">
 				<div class="container">
 
@@ -189,6 +250,7 @@
 
 			</footer>
 			<!-- /FOOTER -->
+
 		</div>
 		<!-- /wrapper -->
 
@@ -208,9 +270,8 @@
 		<!-- JAVASCRIPT FILES -->
 		<script>var plugin_path = 'assets/plugins/';</script>
 		<script src="assets/plugins/jquery/jquery-3.3.1.min.js"></script>
-
 		<script src="assets/js/scripts.js"></script>
-		
+        <script src="assets/js/quote-calcul.js"></script>		
 		
 	</body>
 </html>

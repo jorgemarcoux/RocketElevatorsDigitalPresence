@@ -81,9 +81,21 @@
 										
                                     <!-- SERVICES -->
 									<li class="nav-animate-fadeIn nav-hover-animate hover-animate-bounceIn">
-										<a class="dropdown-toggle noicon" href="RE-index.html#services">
+										<a class="dropdown-toggle noicon" href="#services">
 											SERVICES
 										</a>
+									       <ul class="dropdown-menu">
+											 <li class="dropdown">
+											   <a class="dropdown" href="residential-buildings.html" target="_blank">
+													RESIDENTIAL SERVICES
+											   </a>
+											 </li>
+											 <li class="dropdown">
+											   <a class="dropdown" href="corporate-buildings.html" target="_blank">
+													CORPORATE SERVICES
+												</a>
+											 </li>
+									       </ul>
 
 										<!-- PORTFOLIO -->
 									<li class="nav-animate-fadeIn nav-hover-animate hover-animate-bounceIn">
@@ -515,45 +527,48 @@
             <div class="container">
             	<form>
             	  <div class="form-row">
-                    <div class="form-group col-md-6">
+                    <div class="form-group col-md-4">
                       <label for="name">Full name</label>
    				      <input required type="text" class="form-control" id="name" placeholder="Enter your full name">
                     </div>
-                    <div class="form-group col-md-6">
+                    <div class="form-group col-md-4">
                       <label for="business">Business name</label>
    				      <input required type="text" class="form-control" id="business" placeholder="Enter your business name">
                     </div>
-                  </div>
-
-                  <div class="form-row">
-                    <div class="form-group col-md-6">
+                    <div class="form-group col-md-4">
                       <label for="email">Email address</label>
                       <input required type="email" class="form-control" id="email" placeholder="Enter email">
                     </div>
-                    <div class="form-group col-md-6">
-                      <label for="tel">Phone number</label>
-                      <input type="tel" class="form-control" id="your-tel" placeholder="Enter your phone number">
-                    </div>
                   </div>
 
                   <div class="form-row">
-                    <div class="form-group col-md-6">
+                    <div class="form-group col-md-4">
+                      <label for="tel">Phone number</label>
+                      <input type="tel" class="form-control" id="your-tel" placeholder="Enter your phone number">
+                    </div>
+                    <div class="form-group col-md-4">
                       <label for="project">Project name</label>
                       <input type="text" class="form-control" id="your-project" placeholder="Enter your project name">
                     </div>
-                    <div class="form-group col-md-6">
-                      <label for="description">Project description</label>
-                      <textarea required maxlength="1000" rows="3" class="form-control" name="description" id="project-desc" placeholder="A brief description of your project"></textarea>
+                    <div class="form-group col-md-4">
+                      <label for="project">Department</label>
+                    	<select class="custom-select">
+                          <option selected>Select your department</option>
+                           <option value="1">Sales</option>
+                           <option value="2">Marketing</option>
+                           <option value="3">Other</option>
+                         </select>
                     </div>
+                      
                   </div>
 
                     <div class="form-group">
-                      <label for="project">Department</label>
-                      <input type="text" class="form-control" id="department" placeholder="Your department name">
+                      <label for="description">Project description</label>
+                      <textarea required maxlength="1000" rows="3" class="form-control" name="description" id="project-desc" placeholder="A brief description of your project"></textarea>
                     </div>
                     <div class="form-group">
                       <label for="description">Message</label>
-                    <textarea required maxlength="10000" rows="4" class="form-control" name="message" id="your-message" placeholder="Your message"></textarea>
+                      <textarea required maxlength="10000" rows="4" class="form-control" name="message" id="your-message" placeholder="Your message"></textarea>
                     </div>
 
                    <br />
