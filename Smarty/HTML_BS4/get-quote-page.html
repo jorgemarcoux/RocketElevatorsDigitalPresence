@@ -164,7 +164,7 @@
                     <!-- If building type == residential--> 
                     <div class="form-group col-6 d-none" id="res-ques">
                       <label for="apartements">Number of apartments in the building</label>
-                      <input type="number" class="form-control" id="num-apart">
+                      <input type="number" class="form-control" id="num-apart" name="numApartR">
                       <label for="apartements">Number of floors in the building</label>
                       <input type="number" class="form-control" id="num-floors">
                       <label for="apartements">Number of basements in the building</label>
@@ -239,15 +239,13 @@
                  </div>
 
 
-
-                    
-
-
                                        
                 </form>
               
               <!-- Div estimated # lift cages-->
-              <div id="cages"></div>
+              <div id="cages" class="d-none col-6">
+              	<input class="form-control" id="resultado" type="text" readonly>
+              </div>
            
             
 
