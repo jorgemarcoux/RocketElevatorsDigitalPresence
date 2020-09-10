@@ -1,5 +1,4 @@
 
-
 var resiQues = $("#res-ques");
 
 //Show questions depending on building type
@@ -35,17 +34,18 @@ $(function(){
 });
 
 
-
 //Calculations elevator shafts residential
 
 $(function(){
   $("#num-apart-r").on("input change keyup", function(){
-  var apartR = $(this).val();
+  var apartR = $("#num-apart-r").val();
   $("#num-floors-r").on("input change keyup", function(){
-  var floorR = $(this).val();
+  var floorR = $("#num-floors-r").val();
+  parseInt(floorR, 10);
+  console.log(floorR);
   $("#num-bas-r").on("input change keyup", function(){
-  var basR = $(this).val();
-  var resR = Math.ceil((apartR-basR)/floorR);
+  var basR = $("#num-bas-r").val();
+  var resR = Math.ceil((apartR-basR)/floorR);  
   $("#cages").removeClass("d-none");
   $("#resultCages").val("Recommended number of elevators: " + resR);  
 });
@@ -56,21 +56,23 @@ $(function(){
 
 
 //Calculations elevator shafts commercial
+$(function(){
  $("#num-cages-com").on("input change", function(){
    var comCages = $(this).val();
    $("#cages").removeClass("d-none");
    $("#resultCages").val("Recommended number of elevators: " + comCages);
+ });
  });
 
 
 //Calculations elevator shafts corporate
 $(function(){
   $("#num-occ-cor").on("input change keyup", function(){
-  var occCor = $(this).val();
+  var occCor = $("#num-occ-cor").val();
   $("#num-floors-cor").on("input change keyup", function(){
-  var floorCor = $(this).val();
+  var floorCor = $("#num-floors-cor").val();
   $("#num-bas-cor").on("input change keyup", function(){
-  var basCor = $(this).val();
+  var basCor = $("#num-bas-cor").val();
   $("#cages").removeClass("d-none");
   $("#resultCages").val("Recommended number of elevators: ");  
 });
@@ -78,34 +80,16 @@ $(function(){
 });
 });
 
-/*
-//Calculations elevator shafts hybrid
- //Get input data 1st
-$(function(){
-  $("#num-occ-hyb").on("input change keyup", function(){
-    var occupHyb = $(this).val();
-    $("#num-floors-hyb").on("input change keyup", function(){
-    var floorHyb = $(this).val();
-    $("#num-bas-hyb").on("input change keyup", function(){
-    var basHyb = $(this).val();
-    
- //Then make calculations
- 
-   var totalOccupHyb = occupHyb * (floorHyb + basHyb);
-   var totElevReqHyb = totalOccupHyb / 1000;
-   var elevCollHyb = (floorHyb + basHyb) / 20;
-   var elevPerColHyb = totElevReqHyb / elevCollHyb;
-   var otalElevHyb = elevPerColHyb * elevCollHyb;
- 
-//Finally, show result in only-read input
 
-   $("#cages").removeClass("d-none");
-   $("#resultCages").val("Recommended number of elevators: " + totalElevHyb);
- 
- });
- });
- });
- });
- 
-*/
- 
+//Get value radio - type of elevator
+var test = $("input[name='selectType']:checked").val();
+console.log(test);
+
+
+	
+ var occupHyb = $("#num-occ-hyb").on("input change keyup").val();
+ console.log(occupHyb);
+
+// Send budget and installation fees
+//$("#budget").text("Total Cost");
+$("#installation").text("Installation Fees");

@@ -3,8 +3,7 @@
 	<head>
 		<meta charset="utf-8" />
 		<title>Get a Quote</title>
-		<meta name="description" content="" />
-		<meta name="Author" content="Dorin Grigoras [www.stepofweb.com]" />
+		<meta name="robots" content="noindex">
 
 		<!-- mobile settings -->
 		<meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0" />
@@ -101,7 +100,7 @@
 										<a class="dropdown-toggle noicon" href="RE-index.html#portfolio">
 											PORTFOLIO
 										</a>
-									
+									</li>
 									<!-- NEWS -->
 									<li class="nav-animate-fadeIn nav-hover-animate hover-animate-bounceIn">
 										<a class="dropdown-toggle noicon" href="RE-index.html#news">
@@ -136,18 +135,19 @@
 			</div>
            
         <!--GET A QUOTE FORM-->
-        <div class="container">
-           	<div class="container">
-           		<br />
-           		<br />
-           	  <h4>Are you interested in our services?</h4> 
-           		<p>Please fill out the form so we can know more about your project and get a quote instantly.</p>
+         <br />
+         <br />
+         <br />
+            <div class="container">
+              <h4>Are you interested in our services?</h4> 
+              <p>Please fill out the form so we can know more about your project and get a quote instantly.</p>
             </div>
-            <br />
-            <br />
-           
 
-				<form>
+          <!-- Select building type-->
+          <div class="container">
+			<div class="row">
+			 <div class="col-md-8">
+              <form>
             	  <div class="form-row">
                     <div class="form-group col-5">
                        <label for="type">Building type</label>
@@ -215,23 +215,43 @@
 </label>
                       <input type="number" class="form-control" id="num-bas">
                     </div>
-                    <!-- Elevator Type -->
+                </form>
+			 </div>
+  
+            <!--Quote & elevator line section-->
+             <!-- Elevator line -->
+
+			 <div class="col-md-4 border mb-45">
+			 	<div class="heading-title heading-dotted text-center">
+						<h5>Summary</h5>
+					</div>
+				<div class="row justify-content-center">
+				 <img src="demo_files/images/dollar-quote.png">
+				</div>
+				<!-- Div estimated # lift cages-->
+
+              <div id="cages" class="d-none col">
+              	<br />
+                <input class="form-control" id="resultCages" type="text" readonly>
+              </div> 
+				<br />
+			 	 <p class="font-weight-bold">Choose Elevator Line:</p>
                  <div class="form-check-inline">
-                   <input class="form-check-input" type="radio" name="radios" id="standard" value="standard" checked>
+                   <input class="form-check-input" type="radio" name="selectType">
                    <label class="form-check-label" for="standard">
                      Standard
                    </label>
                    <small>	&nbsp;	&nbsp;($7,565 / unit)</small>
                  </div>
                  <div class="form-check-inline">
-                   <input class="form-check-input" type="radio" name="radios" id="premium" value="premium">
+                   <input class="form-check-input" type="radio" name="selectType">
                    <label class="form-check-label" for="premium">
                      Premium
                    </label>
                    <small>	&nbsp;	&nbsp;($12,345 / unit)</small>
                  </div>
                  <div class="form-check-inline">
-                  <input class="form-check-input" type="radio" name="radios" id="excelium" value="excelium">
+                  <input class="form-check-input" type="radio" name="selectType">
                    <label class="form-check-label" for="excelium">
                      Excelium
                   </label>
@@ -239,25 +259,19 @@
                  </div>
 
 
-                                       
-                </form>
-              <br />
-              <!-- Div estimated # lift cages-->
-              <div id="cages" class="d-none col-6">
-              	<input class="form-control" id="resultCages" type="text" readonly>
+                 <!--Estimated Budget & Installation Cost-->
+                 	<h4 class="mt-15">Installation Cost: <span class="font-weight-bold" id="installation"></h4>
+                 	<h4>Estimated Budget: <span class="font-weight-bold" id="budget"> </h4>
+                 <!-- Div estimated # lift cages-->
+
+                 <br />
+              <div id="cages" class="d-none col">
+                <input class="form-control" id="resultCages" type="text" readonly>
+              </div>                   
               </div>
-           
-            
+			</div>
+		  </div>
 
-
-
-
-
-
-
-        </div><!--div 1st container-->
-
-          
 
      
 
@@ -339,7 +353,8 @@
 		<script>var plugin_path = 'assets/plugins/';</script>
 		<script src="assets/plugins/jquery/jquery-3.3.1.min.js"></script>
 		<script src="assets/js/scripts.js"></script>
-        <script src="assets/js/quote-calcul.js"></script>		
+        <script src="assets/js/quote-calcul.js"></script>
+        <script src="assets/js/TEST-JS.js"></script>		
 		
 	</body>
 </html>
