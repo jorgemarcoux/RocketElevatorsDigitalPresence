@@ -1,6 +1,6 @@
 
 var resiQues = $("#res-ques");
-
+var building = null;
 //Show questions depending on building type
 $(function(){ 
  $("#type-building").change(function(){
@@ -34,6 +34,7 @@ $(function(){
 });
 
 
+
 //Calculations elevator shafts residential
 
 $(function(){
@@ -64,21 +65,19 @@ $(function(){
  });
  });
 
-
+/*
 //Calculations elevator shafts corporate
 $(function(){
-  $("#num-occ-cor").on("input change keyup", function(){
+  $("#num-occ-cor").change(function(){
   var occCor = $("#num-occ-cor").val();
-  $("#num-floors-cor").on("input change keyup", function(){
-  var floorCor = $("#num-floors-cor").val();
-  $("#num-bas-cor").on("input change keyup", function(){
-  var basCor = $("#num-bas-cor").val();
-  $("#cages").removeClass("d-none");
-  $("#resultCages").val("Recommended number of elevators: ");  
+  });
+  $("#num-floors-cor").change(function(){
+  var floorsCor = $(this).val();
+  });
+    
 });
-});
-});
-});
+
+*/
 
 
 //Get value radio - type of elevator
@@ -93,3 +92,5 @@ console.log(test);
 // Send budget and installation fees
 //$("#budget").text("Total Cost");
 $("#installation").text("Installation Fees");
+
+
