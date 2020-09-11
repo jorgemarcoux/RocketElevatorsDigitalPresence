@@ -1,8 +1,6 @@
-
-
+//Show questions depending on building type
 var resiQues = $("#res-ques");
 var building = null;
-//Show questions depending on building type
 $(function(){ 
  $("#type-building").change(function(){
  var building = $("#type-building option:selected").text();
@@ -34,6 +32,27 @@ $(function(){
 })
 });
 
+//Get value radio - type of elevator
+function SelectElevatorLine() {
+  return parseInt($("[type='radio']:checked").val(), 10);
+};
+
+function GetInstallationFees() {
+     if($("[type='radio']:checked").val() == "7565"){
+       return (7565*10)/100;
+     } else if($("[type='radio']:checked").val() == "12345"){
+       return ((12345*13)/100).toFixed(2);
+     } else{
+       return (15400*16)/100;
+     }
+}
+
+$(function(){
+ $('input').on('change click', function(){
+    SelectElevatorLine();
+  });
+});
+
 //Calculations elevator shafts residential
  function ResidentialData() {
     var apartR = parseInt($("#num-apart-r").val(), 10);
@@ -43,9 +62,16 @@ $(function(){
     var checkExtraColRes = floorR / 20;
     var addColRes = Math.floor(checkExtraColRes + 1);
     var totalElevRes  = Math.ceil(addColRes * elevEverySix);
+    var elevCostRes = totalElevRes*SelectElevatorLine();
+    var installFeesRes = totalElevRes*GetInstallationFees();
+    var totalPriceRes = elevCostRes + installFeesRes;
   //send total to only-read div
   $("#cages").removeClass("d-none");
-  $("#resultCages").val("Residential "+ totalElevRes);
+  $("#resultCages").val("Recommended number of elevators: " + totalElevRes);
+  //Send estimated budget
+  $("#installation").text("$"+ installFeesRes);
+  $("#budget").text("$"+elevCostRes);
+  $("#total").text("$"+totalPriceRes);
 };
 //Get input changes
 $(function(){
@@ -61,13 +87,25 @@ $(function(){
 });
 
 //Calculations elevator shafts commercial
+function CommercialData() {
+  var comCages = $("#num-cages-com").val();
+  var elevCostCom = comCages*SelectElevatorLine();
+  var installFeesComr = comCages*GetInstallationFees();
+  var totalPriceCom = elevCostCom + installFeesComr;
+ //send elevators total to only-read div
+  $("#cages").removeClass("d-none");
+  $("#resultCages").val("Recommended number of elevators: " + comCages);
+ //Send estimated budget
+ $("#budget").text("$"+ elevCostCom);
+ $("#installation").text("$"+ installFeesComr);
+ $("#total").text("$"+ totalPriceCom);
+};
+//Get input changes
 $(function(){
- $("#num-cages-com").on("input change", function(){
-   var comCages = $(this).val();
-   $("#cages").removeClass("d-none");
-   $("#resultCages").val("Commercial " + comCages);
- });
- });
+ $("#num-cages-com").on("change keyup", function(){
+ 	CommercialData();
+   });
+}); 
 
 //Calculations elevator shafts corporate
 function CorporateData() {
@@ -80,9 +118,16 @@ function CorporateData() {
   var elevColsCor = Math.ceil(storiesCor / 20);
   var elevPerColCor = Math.ceil(elevReqCor / elevColsCor);
   var totalElevCor = Math.ceil(elevPerColCor * elevColsCor);
+  var elevCostCor = totalElevCor*SelectElevatorLine();
+  var installFeesCor = totalElevCor*GetInstallationFees();
+  var totalPriceCor = elevCostCor + installFeesCor;
   //send total to only-read div
    $("#cages").removeClass("d-none");
-   $("#resultCages").val("CORPORATE " + totalElevCor);
+   $("#resultCages").val("Recommended number of elevators: " + totalElevCor);
+   //Send estimated budget
+   $("#budget").text("$"+elevCostCor);
+   $("#installation").text("$"+ installFeesCor);
+   $("#total").text("$"+ totalPriceCor);
  };
  
 //Get input changes
@@ -109,11 +154,18 @@ function HybridData() {
   var elevColsHyb = Math.ceil(storiesHyb / 20);
   var elevPerColHyb = Math.ceil(elevReqHyb / elevColsHyb);
   var totalElevHyb = Math.ceil(elevPerColHyb * elevColsHyb);
-  
+  var elevCostHyb = totalElevHyb*SelectElevatorLine();
+  var installFeesHyb = totalElevHyb*GetInstallationFees();
+  var totalPriceHyb = elevCostHyb + installFeesHyb;
+  //send total to only-read div
   $("#cages").removeClass("d-none");
-  $("#resultCages").val("Hybrid " + totalElevHyb);
+  $("#resultCages").val("Recommended number of elevators: " + totalElevHyb);
+  //Send estimated budget
+  $("#budget").text("$"+elevCostHyb);
+  $("#installation").text("$"+ installFeesHyb);
+  $("#total").text("$"+ totalPriceHyb);
 };
-
+//Get input changes
 $(function(){
   $("#num-occ-hyb").on("change keyup", function(){
     HybridData();
@@ -126,18 +178,13 @@ $(function(){
   }); 
 });
 
-//Get value radio - type of elevator
-$('input').on('change', function(){
-  var test = $("[type='radio']:checked").val();
-});
 
 
 
 
- 
 
-// Send budget and installation fees
-$("#budget").text("Total Cost");
-$("#installation").text("Installation Fees");
+
+
+
 
 
