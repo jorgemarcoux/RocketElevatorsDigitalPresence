@@ -1,32 +1,30 @@
-
-
-function ResidentialData() {
- 
-  var depas = parseInt($("#num-apart-r").val(), 10);
-  var pisos = $("#num-floors-r").val();
-  
-  console.log(pisos*200);
-  //set number of elevators required
-  //calculate price
-
-  //TENGO QUE ESTAR SEGURO QUE LOS CALCULOS NO SE DECLANCHEN HASTA QUE NO SE HAYAN LLENAOD TODOS LOS CAMPOS
-  
+function buildingT() { 
+ return $("#type-building option:selected").text(); 
 };
 
 $(function(){
-  $("#num-apart-r").change(function(){
-    ResidentialData();
-  });
-  $("#num-floors-r").change(function(){
-    ResidentialData();
-  }); 
+ $("#type-building").change(function(){
+  if(buildingT() === "Residential"){
+    alert("RES");
+  }
+})
 });
 
 
 
+function elevLine() { 
+ return $("input[type='radio']:checked").val();
+};
 
+$(function(){
+ $("input[type='radio']:checked").change(function(){
+  if(elevLine() === "Standard"){
+    console.log("STAN");
+  }
+})
+});
 
-
-
-
-
+$('input').on('change', function(){
+  var test = $("[type='radio']:checked").val();
+  alert(test);
+});

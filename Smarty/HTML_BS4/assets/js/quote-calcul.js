@@ -1,4 +1,5 @@
 
+
 var resiQues = $("#res-ques");
 var building = null;
 //Show questions depending on building type
@@ -37,23 +38,22 @@ $(function(){
 
 //Calculations elevator shafts residential
 
-$(function(){
-  $("#num-apart-r").on("input change keyup", function(){
-  var apartR = $("#num-apart-r").val();
-  $("#num-floors-r").on("input change keyup", function(){
-  var floorR = $("#num-floors-r").val();
-  parseInt(floorR, 10);
-  console.log(floorR);
-  $("#num-bas-r").on("input change keyup", function(){
-  var basR = $("#num-bas-r").val();
-  var resR = Math.ceil((apartR-basR)/floorR);  
+function ResidentialData() {
+  var apartR  = parseInt($("#num-apart-r").val(), 10);
+  var floorR = parseInt($("#num-floors-r").val(), 10);
+  
   $("#cages").removeClass("d-none");
-  $("#resultCages").val("Recommended number of elevators: " + resR);  
-});
-});
-});
-});
+  $("#resultCages").val("Residential "+ (apartR+floorR));
+};
 
+$(function(){
+  $("#num-apart-r").on("change keyup", function(){
+    ResidentialData();
+  });
+  $("#num-floors-r").on("change keyup", function(){
+    ResidentialData();
+  }); 
+});
 
 
 //Calculations elevator shafts commercial
@@ -61,33 +61,69 @@ $(function(){
  $("#num-cages-com").on("input change", function(){
    var comCages = $(this).val();
    $("#cages").removeClass("d-none");
-   $("#resultCages").val("Recommended number of elevators: " + comCages);
+   $("#resultCages").val("Commercial " + comCages);
  });
  });
 
-/*
+
 //Calculations elevator shafts corporate
+
+function CorporatelData() {
+ if(buildingT() == "Corporate"){
+  var occCor  = parseInt($("#num-occ-cor").val(), 10);
+  var floorsCor = parseInt($("#num-floors-cor").val(), 10);
+  var basCor = parseInt($("#num-bas-cor").val(), 10);
+  
+  $("#cages").removeClass("d-none");
+   $("#resultCages").val("Corporate");
+ }
+ else{
+ 	$("#cages").addClass("d-none");
+ }
+};
+
 $(function(){
-  $("#num-occ-cor").change(function(){
-  var occCor = $("#num-occ-cor").val();
+  $("#num-occ-cor").on("change keyup", function(){
+    ResidentialData();
   });
-  $("#num-floors-cor").change(function(){
-  var floorsCor = $(this).val();
+  $("#num-floors-cor").on("change keyup", function(){
+    ResidentialData();
   });
-    
+  $("#num-bas-cor").on("change keyup", function(){
+    ResidentialData();
+  }); 
 });
 
-*/
+//Calculations elevator shafts hybrid
+function HybridData() {
+  var occHyb  = parseInt($("#num-occ-hyb").val(), 10);
+  var floorsHyb = parseInt($("#num-floors-hyb").val(), 10);
+  var basHyb = parseInt($("#num-bas-hyb").val(), 10);
+  
+  $("#cages").removeClass("d-none");
+  $("#resultCages").val("Hybrid ");
+};
+
+$(function(){
+  $("#num-occ-hyb").on("change keyup", function(){
+    ResidentialData();
+  });
+  $("#num-floors-hyb").on("change keyup", function(){
+    ResidentialData();
+  });
+  $("#num-bas-hyb").on("change keyup", function(){
+    ResidentialData();
+  }); 
+});
 
 
 //Get value radio - type of elevator
 var test = $("input[name='selectType']:checked").val();
-console.log(test);
 
 
-	
- var occupHyb = $("#num-occ-hyb").on("input change keyup").val();
- console.log(occupHyb);
+
+
+ 
 
 // Send budget and installation fees
 //$("#budget").text("Total Cost");
