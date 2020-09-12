@@ -1,3 +1,4 @@
+
 function buildingType() { 
   return $("#type-building option:selected").text(); 
 };
@@ -8,7 +9,6 @@ $(function(){
  });
 //Show questions depending on building type
 var resiQues = $("#res-ques");
-var building = null;
 $(function(){ 
  $("#type-building").change(function(){
  var building = $("#type-building option:selected").text();
@@ -78,9 +78,9 @@ $(function(){
     var checkExtraColRes = floorR / 20;
     var addColRes = Math.floor(checkExtraColRes + 1);
     var totalElevRes  = Math.ceil(addColRes * elevEverySix);
-    var elevCostRes = totalElevRes*SelectElevatorLine();
-    var installFeesRes = totalElevRes*GetInstallationFees();
-    var totalPriceRes = elevCostRes + installFeesRes;
+    var elevCostRes = totalElevRes*SelectElevatorLine() ||0;
+    var installFeesRes = totalElevRes*GetInstallationFees()||0;
+    var totalPriceRes = elevCostRes + installFeesRes ||0;
   //send total to only-read div
   $("#cages").removeClass("d-none");
   $("#resultCages").val("Recommended number of elevators: " + totalElevRes);
@@ -105,9 +105,9 @@ $(function(){
 //Calculations elevator shafts commercial
 function CommercialData() {
   var comCages = $("#num-cages-com").val();
-  var elevCostCom = comCages*SelectElevatorLine();
-  var installFeesComr = comCages*GetInstallationFees();
-  var totalPriceCom = elevCostCom + installFeesComr;
+  var elevCostCom = comCages*SelectElevatorLine()||0;
+  var installFeesComr = comCages*GetInstallationFees()||0;
+  var totalPriceCom = (elevCostCom).toLocaleString('en') + installFeesComr||0;
  //send elevators total to only-read div
   $("#cages").removeClass("d-none");
   $("#resultCages").val("Recommended number of elevators: " + comCages);
@@ -134,9 +134,9 @@ function CorporateData() {
   var elevColsCor = Math.ceil(storiesCor / 20);
   var elevPerColCor = Math.ceil(elevReqCor / elevColsCor);
   var totalElevCor = Math.ceil(elevPerColCor * elevColsCor);
-  var elevCostCor = totalElevCor*SelectElevatorLine();
-  var installFeesCor = totalElevCor*GetInstallationFees();
-  var totalPriceCor = elevCostCor + installFeesCor;
+  var elevCostCor = totalElevCor*SelectElevatorLine()||0;
+  var installFeesCor = totalElevCor*GetInstallationFees()||0;
+  var totalPriceCor = elevCostCor + installFeesCor||0;
   //send total to only-read div
    $("#cages").removeClass("d-none");
    $("#resultCages").val("Recommended number of elevators: " + totalElevCor);
@@ -170,9 +170,9 @@ function HybridData() {
   var elevColsHyb = Math.ceil(storiesHyb / 20);
   var elevPerColHyb = Math.ceil(elevReqHyb / elevColsHyb);
   var totalElevHyb = Math.ceil(elevPerColHyb * elevColsHyb);
-  var elevCostHyb = totalElevHyb*SelectElevatorLine();
-  var installFeesHyb = totalElevHyb*GetInstallationFees();
-  var totalPriceHyb = elevCostHyb + installFeesHyb;
+  var elevCostHyb = totalElevHyb*SelectElevatorLine()||0;
+  var installFeesHyb = totalElevHyb*GetInstallationFees()||0;
+  var totalPriceHyb = elevCostHyb + installFeesHyb||0;
   //send total to only-read div
   $("#cages").removeClass("d-none");
   $("#resultCages").val("Recommended number of elevators: " + totalElevHyb);
