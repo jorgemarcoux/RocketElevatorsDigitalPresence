@@ -48,8 +48,7 @@ function GetInstallationFees() {
 }
 
 $(function(){
- $('input').on('change click', function(){
-    SelectElevatorLine();
+ $('.linet').on('change click', function(){
   });
 });
 
