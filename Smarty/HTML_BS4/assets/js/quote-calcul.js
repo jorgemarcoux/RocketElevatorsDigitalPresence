@@ -1,3 +1,11 @@
+function buildingType() { 
+  return $("#type-building option:selected").text(); 
+};
+
+$(function(){
+ $("#type-building").change(function(){
+});
+ });
 //Show questions depending on building type
 var resiQues = $("#res-ques");
 var building = null;
@@ -49,6 +57,15 @@ function GetInstallationFees() {
 
 $(function(){
  $('.linet').on('change click', function(){
+ 	if(buildingType() == "Residential"){
+      ResidentialData();
+    }else if(buildingType() == "Commercial"){
+      CommercialData();
+    }else if(buildingType() == "Corporate"){
+      CorporateData();
+    }else if(buildingType() == "Hybrid"){
+      HybridData();
+    }
   });
 });
 
