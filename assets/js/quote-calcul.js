@@ -85,9 +85,9 @@ $(function(){
   $("#cages").removeClass("d-none");
   $("#resultCages").val("Recommended number of elevators: " + totalElevRes);
   //Send estimated budget
-  $("#installation").text("$"+ installFeesRes);
-  $("#budget").text("$"+elevCostRes);
-  $("#total").text("$"+totalPriceRes);
+  $("#installation").text("$"+ new Intl.NumberFormat().format(installFeesRes.toFixed(2)));
+  $("#budget").text("$"+ new Intl.NumberFormat().format(elevCostRes.toFixed(2)));
+  $("#total").text("$"+ new Intl.NumberFormat().format(totalPriceRes.toFixed(2)));
 };
 //Get input changes
 $(function(){
@@ -107,14 +107,14 @@ function CommercialData() {
   var comCages = $("#num-cages-com").val();
   var elevCostCom = comCages*SelectElevatorLine()||0;
   var installFeesComr = comCages*GetInstallationFees()||0;
-  var totalPriceCom = (elevCostCom).toLocaleString('en') + installFeesComr||0;
+  var totalPriceCom = elevCostCom + installFeesComr||0;
  //send elevators total to only-read div
   $("#cages").removeClass("d-none");
-  $("#resultCages").val("Recommended number of elevators: " + comCages);
+  $("#resultCages").val("Recommended number of elevators: "+ comCages);
  //Send estimated budget
- $("#budget").text("$"+ elevCostCom);
- $("#installation").text("$"+ installFeesComr);
- $("#total").text("$"+ totalPriceCom);
+ $("#budget").text("$"+ new Intl.NumberFormat().format(elevCostCom.toFixed(2)));
+ $("#installation").text("$"+ new Intl.NumberFormat().format(installFeesComr.toFixed(2)));
+ $("#total").text("$"+  new Intl.NumberFormat().format(totalPriceCom.toFixed(2)));
 };
 //Get input changes
 $(function(){
@@ -141,9 +141,9 @@ function CorporateData() {
    $("#cages").removeClass("d-none");
    $("#resultCages").val("Recommended number of elevators: " + totalElevCor);
    //Send estimated budget
-   $("#budget").text("$"+elevCostCor);
-   $("#installation").text("$"+ installFeesCor);
-   $("#total").text("$"+ totalPriceCor);
+   $("#budget").text("$"+ new Intl.NumberFormat().format(elevCostCor.toFixed(2)));
+   $("#installation").text("$"+ new Intl.NumberFormat().format(installFeesCor.toFixed(2)));
+   $("#total").text("$"+ new Intl.NumberFormat().format(totalPriceCor.toFixed(2)));
  };
  
 //Get input changes
@@ -177,9 +177,9 @@ function HybridData() {
   $("#cages").removeClass("d-none");
   $("#resultCages").val("Recommended number of elevators: " + totalElevHyb);
   //Send estimated budget
-  $("#budget").text("$"+elevCostHyb);
-  $("#installation").text("$"+ installFeesHyb);
-  $("#total").text("$"+ totalPriceHyb);
+  $("#budget").text("$"+ new Intl.NumberFormat().format(elevCostHyb.toFixed(2)));
+  $("#installation").text("$"+ new Intl.NumberFormat().format(installFeesHyb.toFixed(2)));
+  $("#total").text("$"+ new Intl.NumberFormat().format(totalPriceHyb.toFixed(2)));
 };
 //Get input changes
 $(function(){
