@@ -9733,15 +9733,5 @@ section.dark-2 div.category-grid .card {
 	z-index:100;
 }
 
-/*Custom Mobile Version CSS*/
-@media (max-width: 575.98px) {
- .btn-mob{
-	 width:100%;
-	 
-	}
- .mob-text-btn{
- 	font-size:2.5rem;
- }
-}
 
 
